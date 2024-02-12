@@ -90,11 +90,21 @@ public class ObjectDBRepository {
 			Juegos juegoEjemplo = new Juegos();
 			juegoEjemplo.getTitulo();
 			juegoEjemplo.getGenero();
+			
+			JuegoUsuarioDTO arrayJuegos = new JuegoUsuarioDTO();
+			
+			// Obtener la lista de juegos del usuario
+			List<Juegos> listaJuegos = arrayJuegos.getListaJuegos();
 
+			// Agregamos el nuevo juego a la lista
+			listaJuegos.add(juegoEjemplo);
+
+			// Actualizamos la lista de juegos en el DTO
+			arrayJuegos.setListaJuegos(listaJuegos);
+			
 			System.out.println("Este usuario juega tambien a: " + juegoEjemplo.getTitulo() + juegoEjemplo.getGenero());
 
 			// Lo insertamos en la base de datos ObjectDB
-
 			em.persist(usuarioEjemplo);
 			em.persist(juegoEjemplo);
 		}
