@@ -42,5 +42,4 @@ public class BBDDController {
  
 	}
 	
-	"tus muertos"
 }
